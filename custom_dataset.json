@@ -1,0 +1,100 @@
+[
+    {
+        "query": "Are there any courses on encryption techniques?",
+        "courses": [
+            {
+                "title": "Introduction to Encryption",
+                "description": "Learn the basics of encryption, including symmetric and asymmetric encryption methods, and how they protect data privacy."
+            },
+            {
+                "title": "Advanced Encryption Methods",
+                "description": "Explore advanced techniques in encryption, including RSA, AES, and public-key infrastructure."
+            }
+        ],
+        "additional_info": "These courses cover core principles of encryption and will provide foundational and advanced skills in securing data."
+    },
+    {
+        "query": "How can I learn about network security in IBM SkillsBuild?",
+        "courses": [
+            {
+                "title": "Fundamentals of Network Security",
+                "description": "This course covers the basics of network security, including firewall configuration, intrusion detection, and secure network design."
+            },
+            {
+                "title": "Advanced Network Security",
+                "description": "Dive deeper into topics like VPNs, advanced firewall techniques, and security protocols for modern networks."
+            }
+        ],
+        "additional_info": "Network security is crucial for protecting digital assets. Start with the fundamentals and progress to advanced techniques for thorough knowledge."
+    },
+    {
+        "query": "What resources are available for data privacy?",
+        "courses": [
+            {
+                "title": "Data Privacy Essentials",
+                "description": "Understand data privacy concepts, including regulatory frameworks like GDPR, and strategies for protecting personal data."
+            },
+            {
+                "title": "Data Security and Privacy",
+                "description": "A comprehensive course on data protection measures, anonymization, and compliance with international privacy standards."
+            }
+        ],
+        "additional_info": "Data privacy is vital in today's digital world. These courses will help you understand legal and technical aspects of data security."
+    },
+    {
+        "query": "Is there a course on secure software development practices?",
+        "courses": [
+            {
+                "title": "Secure Software Development Lifecycle",
+                "description": "Learn secure coding practices, threat modeling, and the principles of the Secure Software Development Lifecycle (SSDLC)."
+            },
+            {
+                "title": "Introduction to OWASP",
+                "description": "An in-depth look at the Open Web Application Security Project (OWASP) and best practices for secure web development."
+            }
+        ],
+        "additional_info": "These courses are ideal for developers and software engineers who want to integrate security into the software development process."
+    },
+    {
+        "query": "What are the basics of cybersecurity?",
+        "courses": [
+            {
+                "title": "Cybersecurity Fundamentals",
+                "description": "Gain a broad overview of cybersecurity principles, including threat types, attack vectors, and basic protection strategies."
+            },
+            {
+                "title": "Cyber Threat Landscape",
+                "description": "Learn about current cyber threats, malware, ransomware, and the evolving landscape of cybersecurity risks."
+            }
+        ],
+        "additional_info": "Start with the basics of cybersecurity to understand how to identify and mitigate common threats."
+    },
+    {
+        "query": "How can I improve my skills in ethical hacking?",
+        "courses": [
+            {
+                "title": "Introduction to Ethical Hacking",
+                "description": "An introductory course covering ethical hacking techniques, penetration testing, and vulnerability analysis."
+            },
+            {
+                "title": "Advanced Penetration Testing",
+                "description": "Build on basic hacking skills with advanced tools and techniques in penetration testing and system exploitation."
+            }
+        ],
+        "additional_info": "Ethical hacking skills are essential for proactive security. Begin with the basics and advance to penetration testing techniques."
+    },
+    {
+        "query": "Are there courses on cloud security?",
+        "courses": [
+            {
+                "title": "Cloud Security Fundamentals",
+                "description": "Learn the basics of securing cloud environments, including identity management, data protection, and compliance."
+            },
+            {
+                "title": "Advanced Cloud Security",
+                "description": "Dive deeper into securing complex cloud architectures and implementing multi-layered security in cloud platforms."
+            }
+        ],
+        "additional_info": "With more businesses moving to the cloud, cloud security skills are in high demand. These courses cover essentials and advanced practices."
+    }
+]
