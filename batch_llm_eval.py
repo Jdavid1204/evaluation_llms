@@ -2,6 +2,7 @@ from huggingface_hub import login
 from transformers import AutoTokenizer, AutoModelForCausalLM
 from datasets import load_dataset
 from evaluate import load
+from dotenv import load_dotenv
 import torch
 import time
 import os
@@ -30,9 +31,12 @@ if tokenizer.pad_token_id is None:
 
 # Step 3: Load the Evaluation Dataset
 # Here, we use a sample dataset, but you can replace it with your custom dataset as needed
-dataset = load_dataset("squad_v2", split="validation[:5]")  # Process only the first 10 items
+dataset = load_dataset("squad_v2", split="validation[:10]")  # Process only the first 10 items
 
 # Step 4: Load Metrics
+ter = load("ter")
+meteor = load("meteor")
+sacrebleu = load("sacrebleu")
 bleu = load("bleu")
 rouge = load("rouge")
 bertscore = load("bertscore")
@@ -73,11 +77,15 @@ def evaluate_model(model, tokenizer, dataset, batch_size=4):
     avg_latency = sum(latencies) / len(latencies)
 
     # Calculate metrics
+    meteor_score = meteor.compute(predictions=predictions, references=references)
+    ter_score = ter.compute(predictions=predictions, references=references)
+    sacrebleu_score = sacrebleu.compute(predictions=predictions, references=references)
     bleu_score = bleu.compute(predictions=predictions, references=references)
     rouge_score = rouge.compute(predictions=predictions, references=references)
     bertscore_score = bertscore.compute(predictions=predictions, references=references, lang="en")
 
-    return {"BLEU": bleu_score, "ROUGE": rouge_score, "BERTScore": bertscore_score, "Average Latency (seconds)": avg_latency}
+    return {"METEOR": meteor_score, "SACREBLEU": sacrebleu_score, "TER": ter_score, "BLEU": bleu_score, "ROUGE": rouge_score, "BERTScore": bertscore_score, "Average Latency (seconds)": avg_latency}
+
 
 results = evaluate_model(model, tokenizer, dataset, batch_size=8)  # Adjust batch size as needed
 print(results)

@@ -14,12 +14,13 @@ os.environ["TOKENIZERS_PARALLELISM"] = "false"
 load_dotenv()
 huggin_face_token = os.getenv("HUGGING_FACE_TOKEN")
 
-# Step 1: Authenticate (if required)
+
+# Step 1: Authenticate
 
 login(huggin_face_token)
 
 # Step 2: Load the Llama 3.2 Model and Tokenizer
-model_name = "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B"
+model_name = "Qwen/Qwen2.5-0.5B"
 tokenizer = AutoTokenizer.from_pretrained(model_name, trust_remote_code=True)
 model = AutoModelForCausalLM.from_pretrained(
     model_name, 
