@@ -17,7 +17,7 @@ if not huggin_face_token:
 
 login(huggin_face_token)
 
-model_name = os.getenv("MODEL_NAME")
+model_name = "Qwen/Qwen2.5-0.5B"
 tokenizer = AutoTokenizer.from_pretrained(model_name, trust_remote_code=True)
 model = AutoModelForCausalLM.from_pretrained(
     model_name, 
@@ -36,6 +36,9 @@ dataset = Dataset.from_json("custom_dataset.json")
 ter = load("ter")
 meteor = load("meteor")
 sacrebleu = load("sacrebleu")
+bleu = load("bleu")
+rouge = load("rouge")
+bertscore = load("bertscore")
 
 
 def retrieve_courses(query, courses_data):
@@ -87,8 +90,11 @@ def evaluate_model(model, tokenizer, dataset):
     meteor_score = meteor.compute(predictions=predictions, references=references)
     ter_score = ter.compute(predictions=predictions, references=references)
     sacrebleu_score = sacrebleu.compute(predictions=predictions, references=references)
+    bleu_score = bleu.compute(predictions=predictions, references=references)
+    rouge_score = rouge.compute(predictions=predictions, references=references)
+    bertscore_score = bertscore.compute(predictions=predictions, references=references, lang="en")
 
-    return {"METEOR": meteor_score, "SACREBLEU": sacrebleu_score, "TER": ter_score, "Average Latency (seconds)": avg_latency}
+    return {"METEOR": meteor_score, "SACREBLEU": sacrebleu_score, "TER": ter_score, "BLEU": bleu_score, "ROUGE": rouge_score, "BERTScore": bertscore_score, "Average Latency (seconds)": avg_latency}
 
 
 results = evaluate_model(model, tokenizer, dataset)
